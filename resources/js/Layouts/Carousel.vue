@@ -1,7 +1,7 @@
 <template>
-  <Carousel :autoplay="3000" :wrap-around="true">
+  <Carousel :autoplay="4000" :wrap-around="true">
     <Slide v-for="slide in images" :key="slide">
-      <div class="carousel__item"><img :src="slide" ></div>
+      <div class="carousel__item"><img class="img-carousel" :src="slide" /></div>
     </Slide>
 
     <template #addons="{ slidesCount }">
@@ -20,13 +20,18 @@ import "vue3-carousel/dist/carousel.css";
 export default defineComponent({
   data() {
     return {
-        images: [
-            '/img/carousel/slide1.jpg',
-            '/img/carousel/slide2.gif',
-            '/img/carousel/slide3.jpg',
-            '/img/carousel/slide4.jpg',
-            '/img/carousel/slide5.jpg',
-        ]
+      images: [
+        "/img/carousel/laravel.png",
+        "/img/carousel/vue.jpg",
+        "/img/carousel/php.png",
+        "/img/carousel/net.png",
+        "/img/carousel/postgresql.jpg",
+        "/img/carousel/bootstrap.png",
+        "/img/carousel/github.jpg",
+        "/img/carousel/mysql.jpg",
+        "/img/carousel/codeigniter.png",
+        "/img/carousel/j-query.jpg",
+      ],
     };
   },
   name: "carousel-vue",
@@ -40,9 +45,14 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+    --carousel-color-primary: #fafafa;
+    --carousel-color-secondary: #5a5a5a;
+}
+
 .carousel__item {
   min-height: 20rem;
-  width: 100%;
+  width: 90%;
   /* background-color: var(--carousel-color-primary); */
   color: var(--carousel-color-white);
   font-size: 20px;
@@ -63,7 +73,12 @@ export default defineComponent({
   border: 2px solid white;
 }
 
-img {
-    width: 35%;
+.img-carousel {
+  min-width: 50%;
+  max-height: 300px;
+  border-radius: 2rem;
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  box-shadow: 10px 10px 5px #ccc;
 }
 </style>

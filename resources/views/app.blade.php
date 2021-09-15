@@ -15,15 +15,25 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        <!-- Icons -->
+        <link rel="stylesheet" href="{{ asset('css/line-awesome/css/line-awesome.min.css') }}">
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
+
     <body class="font-sans antialiased">
         @inertia
 
-        @env ('local')
-            {{-- <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script> --}}
+        @env('local')
+        {{-- <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script> --}}
         @endenv
     </body>
+
+    <script>
+        // function to toggle the show class, to display the menu on mobile screens.
+        const menuCollapse = () => {
+            document.getElementById("mobileMenu").classList.toggle("show");
+        }
+    </script>
 </html>

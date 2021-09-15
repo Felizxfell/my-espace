@@ -1,397 +1,61 @@
 <template>
-  <div class="container-lg p-4 h-full bg-gray-800">
+  <!-- Navigation -->
+  <Navigation></Navigation>
+  <!-- Navigation -->
+  <div class="container-lg p-4 h-full bg-gray-800 font-mono">
     <div class="flex flex-col">
-      <div class="my-4 px-4 flex items-start">
-        <div class="w-32">&nbsp;</div>
+      <div class="mt-0 mb-0 px-4 flex items-start">
+        <div class="w-36">&nbsp;</div>
         <div class="w-full">
           <CarouselVue></CarouselVue>
         </div>
-        <div class="w-32">&nbsp;</div>
+        <div class="w-36">&nbsp;</div>
       </div>
-      <div class="grid justify-items-stretch my-4">
-        <div class="cartoon">
-          <div class="shoulders"></div>
-          <div class="hair-back"></div>
-          <div class="neck"></div>
-          <div class="ear ha hb"></div>
-          <div class="ear ha hb"></div>
-          <div class="face">
-            <div class="cheek"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-            <div class="eye">
-              <div class="pupil"></div>
-              <div class="eye-bright"></div>
-            </div>
-            <div class="eye">
-              <div class="pupil"></div>
-              <div class="eye-bright"></div>
-            </div>
-            <div class="eyebrow"></div>
-            <div class="eyebrow"></div>
-          </div>
-          <div class="forehead"></div>
-          <div class="hair-front-1"></div>
-          <div class="hair-front-1-1"></div>
-          <div class="hair-front-2"></div>
-          <div class="hair-front-2"></div>
-          <div class="hair-front-3"></div>
-          <div class="hair-front-3"></div>
-          <div class="hair-bangs"></div>
-          <div class="shirt-neck"></div>
-          <div class="shirt-neck"></div>
-        </div>
+      <div class="grid justify-items-stretch mt-9 mb-4">
+        <span class="font-bold text-center text-3xl text-white mb-4">
+          <p>Felipe de Jes&uacute;s Isidro S&aacute;nchez</p>
+          <p class="text-green-400">(Felizxfell)</p>
+        </span>
+        <Cartoon></Cartoon>
       </div>
-      <div class="h-auto w-full my-4 grid justify-items-center text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam odio
-        fuga dicta, in eaque beatae, accusantium ipsam cum facilis quasi
-        ratione, blanditiis repudiandae tempora! Vero rerum officiis quibusdam
-        nihil soluta!
-      </div>
-      <div class="box-border h-auto w-full my-4 bg-red-700 text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-        molestias voluptates eos. Sint, neque? Ut, natus! Totam alias, odio
-        harum nesciunt autem facere eveniet, ullam, repellendus perspiciatis
-        tempora quasi veritatis.
-      </div>
-      <div class="box-border h-auto w-full my-4 bg-green-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid
-        nam, dolorem aspernatur dolor sunt, ex dignissimos, error necessitatibus
-        dicta in aperiam. Dolorum eligendi deleniti atque adipisci laboriosam,
-        voluptatem maiores?
-      </div>
+    </div>
+  </div>
+  <!-- <div class="h-full bg-indigo-800 font-mono"></div> -->
+  <div class="container-lg p-4 h-full bg-indigo-800 font-mono">
+    <div class="h-auto w-full my-4 grid justify-items-center text-white">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam odio
+      fuga dicta, in eaque beatae, accusantium ipsam cum facilis quasi ratione,
+      blanditiis repudiandae tempora! Vero rerum officiis quibusdam nihil
+      soluta!
+    </div>
+    <div class="box-border h-auto w-full my-4 bg-red-700 text-white">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+      molestias voluptates eos. Sint, neque? Ut, natus! Totam alias, odio harum
+      nesciunt autem facere eveniet, ullam, repellendus perspiciatis tempora
+      quasi veritatis.
+    </div>
+    <div class="box-border h-auto w-full my-4 bg-green-500">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid nam,
+      dolorem aspernatur dolor sunt, ex dignissimos, error necessitatibus dicta
+      in aperiam. Dolorum eligendi deleniti atque adipisci laboriosam,
+      voluptatem maiores?
     </div>
   </div>
 </template>
 
 <script>
 import CarouselVue from "@/Layouts/Carousel.vue";
+import Navigation from "@/Layouts/Navigation.vue";
+import Cartoon from "./Cartoon";
+
 export default {
   components: {
     CarouselVue,
+    Navigation,
+    Cartoon,
   },
 };
 </script>
 
 <style>
-.cartoon {
-  position: relative;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 45vmin;
-  height: 45vmin;
-}
-
-.cartoon div {
-  position: absolute;
-  box-sizing: border-box;
-}
-
-.b {
-  border: 1vmin solid black;
-}
-
-.r {
-  border-radius: 100%;
-}
-
-.hb::before,
-.ha::after {
-  content: "";
-  display: block;
-  position: absolute;
-}
-
-/****/
-.cartoon {
-  --skin: rgb(184, 120, 78);
-  --iris: rgb(145, 74, 9);
-  --hair: rgb(41, 16, 9);
-  --shirt: #eef4ff;
-  --line: rgba(80, 0, 0, 0.15);
-}
-
-.face {
-  width: 36%;
-  height: 45%;
-  background: var(--skin);
-  border-radius: 100% 100% / 20% 20% 120% 120%;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.forehead {
-  width: 36%;
-  height: 8%;
-  border-radius: 50%;
-  background: var(--skin);
-  top: 12%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.neck {
-  width: 15%;
-  height: 25%;
-  background: var(--skin);
-  top: 46%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 8vmin;
-  box-shadow: inset 0 25.5vmin 0 -15vmin var(--line),
-    inset 0 -3vmin 0 -1vmin rgba(0, 0, 0, 0.2),
-    inset 0 -3vmin 0 -1vmin var(--shirt);
-}
-
-.mouth {
-  width: 40%;
-  height: 3%;
-  border: 0.25vmin solid rgba(0, 0, 0, 0.2);
-  border-top-color: transparent;
-  border-radius: 100% / 100% 100% 40% 50%;
-  bottom: 20%;
-  left: 50%;
-  transform: translate(-50%, 0) rotate(2deg);
-}
-
-.nose {
-  width: 16%;
-  height: 30%;
-  background: var(--line);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  clip-path: polygon(50% 0%, 60% 88%, 0% 85%, 55% 100%, 100% 88%);
-}
-
-.ear {
-  width: 8%;
-  height: 18%;
-  border-radius: 90% 100% 70% 100% / 70% 100%;
-  background: var(--skin);
-  box-shadow: inset -9vmin 0 0 -7vmin var(--line);
-  transform: rotate(-10deg);
-  top: 28%;
-  left: 27%;
-}
-
-.ear::before {
-  width: 60%;
-  height: 80%;
-  border-radius: 100% 50% 0 0;
-  border: 0.25vmin solid var(--line);
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  top: 15%;
-  left: 4%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
-}
-
-.ear::after {
-  width: 2vmin;
-  height: 2vmin;
-  border: 0.25vmin solid var(--line);
-  border-radius: 50%;
-  top: 50%;
-  right: 8%;
-}
-
-.ear + .ear {
-  transform: scaleX(-1) rotate(-10deg);
-  left: auto;
-  right: 27.125%;
-}
-
-.eye {
-  width: 35%;
-  height: 13%;
-  background: white;
-  border-radius: 80% 90% 30% 40% / 70% 100% 90% 100%;
-  top: 28%;
-  right: 7%;
-  box-shadow: 0 -0.5vmin var(--line);
-  overflow: hidden;
-}
-
-.eye + .eye {
-  transform: scaleX(-1);
-  right: auto;
-  left: 7%;
-}
-
-.pupil {
-  width: 25%;
-  height: 50%;
-  background: #222;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  box-shadow: 0 0 0 1.6vmin var(--iris);
-}
-
-.eye-bright {
-  width: 1vmin;
-  height: 1vmin;
-  background: white;
-  border-radius: 50%;
-  top: 25%;
-  left: 40%;
-  box-shadow: -0.5vmin 0.75vmin 0 -0.25vmin white;
-}
-
-.eye + .eye .eye-bright {
-  left: 50%;
-  box-shadow: 0.5vmin 0.75vmin 0 -0.125vmin white;
-}
-
-.cheek {
-  width: 80%;
-  height: 10%;
-  background: #f002;
-  border-radius: 20% 20% 100% 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: blur(1vmin);
-}
-
-.eyebrow {
-  width: 40%;
-  height: 20%;
-  top: 15%;
-  right: 4%;
-  border-radius: 100% 90% 100% 40% / 70% 100% 90% 100%;
-  box-shadow: -0.25vmin -1.5vmin 0 -0.25vmin rgba(0, 0, 0, 0.1),
-    -0.25vmin -1.5vmin 0 -0.25vmin var(--hair);
-  transform: rotate(8deg);
-}
-
-.eyebrow + .eyebrow {
-  transform: scaleX(-1) rotate(12deg);
-  left: 4%;
-  right: auto;
-}
-
-.hair-back {
-  width: 41%;
-  height: 56%;
-  border-radius: 90% 90% 30% 30% / 100%;
-  background: var(--hair);
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 100% 100% / 80% 80% 120% 120%;
-  box-shadow: inset 0 0 0 10vmin rgba(0, 0, 0, 0.075);
-}
-
-.hair-front-1 {
-  width: 18%;
-  height: 11%;
-  background: var(--hair);
-  border-radius: 0 100% 0 100%;
-  left: 53%;
-  top: 6%;
-  transform: rotate(-20deg);
-}
-
-.hair-front-1 + .hair-front-1 {
-  left: 31%;
-  top: -5%;
-  transform: rotate(-50deg);
-}
-
-.hair-front-1-1 {
-  width: 18%;
-  height: 11%;
-  background: var(--hair);
-  border-radius: 0 100% 0 100%;
-  left: 44%;
-  top: 4%;
-  transform: rotate(-32deg);
-}
-
-.hair-front-2 {
-  width: 20%;
-  height: 15%;
-  background: var(--hair);
-  border-radius: 115% 0 60% 0;
-  left: 30%;
-  top: -0.25%;
-  transform: rotate(-3deg);
-}
-
-.hair-front-2 + .hair-front-2 {
-  height: 19%;
-  width: 22%;
-  transform: rotate(7deg);
-  border-radius: 100% 0 140% 0;
-  top: -6.5%;
-  left: 41%;
-}
-
-.hair-front-3 {
-  width: 22%;
-  height: 10%;
-  background: var(--hair);
-  border-radius: 0% 100% 0 100%;
-  left: 50%;
-  top: -3.5%;
-  transform: rotate(-25deg);
-}
-
-.hair-front-3 + .hair-front-3 {
-  transform: rotate(3deg);
-  top: 0;
-  left: 53%;
-}
-
-.hair-bangs {
-  width: 35%;
-  height: 20%;
-  border-radius: 50%;
-  transform: rotate(-196deg);
-  left: 39.5%;
-  top: -8%;
-  box-shadow: 3vmin 0 var(--hair);
-  clip-path: polygon(0% 50%, 150% 50%, 150% 100%, 0% 100%);
-}
-
-.shirt-neck {
-  width: 10%;
-  height: 8%;
-  background: var(--shirt);
-  transform: skew(-10deg) rotate(25deg);
-  box-shadow: inset 0 0 0 5vmin rgba(0, 0, 0, 0.1);
-  top: 63.125%;
-  left: 37%;
-}
-
-.shirt-neck + .shirt-neck {
-  transform: scaleX(-1) skew(-10deg) rotate(25deg);
-  left: auto;
-  right: 37%;
-}
-
-.shoulders {
-  width: 55%;
-  height: 21%;
-  background: var(--shirt);
-  border-radius: 50%;
-  top: 64%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  clip-path: polygon(
-    0% 40%,
-    40% 10%,
-    40% 0%,
-    60% 0%,
-    60% 10%,
-    100% 40%,
-    100% 100%,
-    0% 100%
-  );
-}
 </style>
