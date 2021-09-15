@@ -41,17 +41,22 @@
       voluptatem maiores?
     </div>
   </div>
+  <!-- Footer -->
+  <Footer></Footer>
+  <!-- Footer -->
 </template>
 
 <script>
 import CarouselVue from "@/Layouts/Carousel.vue";
 import Navigation from "@/Layouts/Navigation.vue";
+import Footer from "@/Layouts/Footer.vue";
 import Cartoon from "./Cartoon";
 
 export default {
   components: {
     CarouselVue,
     Navigation,
+    Footer,
     Cartoon,
   },
 };

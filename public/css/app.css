@@ -1099,6 +1099,9 @@ select {
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
+.m-auto {
+	margin: auto;
+}
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1106,6 +1109,14 @@ select {
 .my-4 {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+}
+.my-3 {
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+.mx-1 {
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
 }
 .ml-3 {
 	margin-left: 0.75rem;
@@ -1293,6 +1304,9 @@ select {
 .w-36 {
 	width: 9rem;
 }
+.w-1\/2 {
+	width: 50%;
+}
 .min-w-0 {
 	min-width: 0px;
 }
@@ -1367,6 +1381,9 @@ select {
 }
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-row {
+	flex-direction: row;
 }
 .flex-col {
 	flex-direction: column;
@@ -1516,6 +1533,10 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
+.border-gray-500 {
+	--tw-border-opacity: 1;
+	border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+}
 .bg-white {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
@@ -1598,6 +1619,9 @@ select {
 }
 .p-4 {
 	padding: 1rem;
+}
+.p-5 {
+	padding: 1.25rem;
 }
 .px-4 {
 	padding-left: 1rem;
@@ -1699,6 +1723,12 @@ select {
 }
 .pt-8 {
 	padding-top: 2rem;
+}
+.pt-10 {
+	padding-top: 2.5rem;
+}
+.pb-5 {
+	padding-bottom: 1.25rem;
 }
 .text-left {
 	text-align: left;
@@ -1947,6 +1977,9 @@ select {
 .duration-1000 {
 	transition-duration: 1000ms;
 }
+.duration-700 {
+	transition-duration: 700ms;
+}
 .ease-in-out {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2191,6 +2224,10 @@ select {
 		margin-left: 0px;
 	}
 
+	.sm\:mt-10 {
+		margin-top: 2.5rem;
+	}
+
 	.sm\:block {
 		display: block;
 	}
@@ -2217,6 +2254,10 @@ select {
 
 	.sm\:w-full {
 		width: 100%;
+	}
+
+	.sm\:w-4\/12 {
+		width: 33.333333%;
 	}
 
 	.sm\:max-w-md {
@@ -2357,12 +2398,28 @@ select {
 		display: grid;
 	}
 
+	.md\:w-3\/12 {
+		width: 25%;
+	}
+
+	.md\:flex-auto {
+		flex: 1 1 auto;
+	}
+
 	.md\:grid-cols-3 {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 
 	.md\:grid-cols-2 {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.md\:flex-row {
+		flex-direction: row;
+	}
+
+	.md\:flex-row-reverse {
+		flex-direction: row-reverse;
 	}
 
 	.md\:gap-6 {
