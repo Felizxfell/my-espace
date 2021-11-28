@@ -15,7 +15,7 @@
     <div class="flex mobile-collapse">
       <jet-input type="search" class="h-full px-3 rounded-l-lg" placeholder="Buscar..."/>      
       <div>
-        <button class="inline-block bg-blue-700 hover:bg-blue-600 text-blue-100 hover:text-blue-200 px-4 py-3.5 flex items-center font-bold rounded-r-lg">
+        <button class="inline-block bg-gray-800 hover:bg-gray-600	text-blue-100 hover:text-blue-200 px-4 py-3.5 flex items-center font-bold rounded-r-lg">
           <i class="las la-search"></i>
         </button>        
       </div>

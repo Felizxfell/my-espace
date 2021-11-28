@@ -1,5 +1,6 @@
 <template>
-  <Carousel :autoplay="4000" :wrap-around="true">
+  <Carousel :wrap-around="true"> 
+    <!-- :autoplay="4000" -->
     <Slide v-for="slide in images" :key="slide">
       <div class="carousel__item"><img class="img-carousel" :src="slide" /></div>
     </Slide>
@@ -52,8 +53,7 @@ export default defineComponent({
 
 .carousel__item {
   min-height: 20rem;
-  width: 90%;
-  /* background-color: var(--carousel-color-primary); */
+  width: 100%;  
   color: var(--carousel-color-white);
   font-size: 20px;
   border-radius: 8px;
@@ -80,5 +80,11 @@ export default defineComponent({
   -moz-box-shadow: 10px 10px 5px #ccc;
   -webkit-box-shadow: 10px 10px 5px #ccc;
   box-shadow: 10px 10px 5px #ccc;
+}
+
+@media screen and (max-width: 590px) {
+  .carousel__item {
+    min-height: 0rem;
+  }
 }
 </style>
