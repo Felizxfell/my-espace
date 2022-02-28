@@ -4,7 +4,7 @@
         <div class="pt-2">
             <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 flex-col md:flex-row max-w-6xl text-gray-900 hover:text-green-400">
                 <div class="mt-2">
-                    © Copyright {{ new Date().getFullYear() }}. All Rights Reserved. :D
+                    © Copyright {{ new Date().getFullYear() }}. All Rights Reserved.
                 </div>
                 
                 <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-xl">                    
