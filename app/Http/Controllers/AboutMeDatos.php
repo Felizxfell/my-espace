@@ -14,9 +14,8 @@ class AboutMeDatos extends Controller
      */
     public function index()
     {
-        return Inertia::render('backDatos/AboutMe', [
-            'title' => 'Datos'
-        ]);
+        $data['title'] = 'sobre mi';
+        return Inertia::render('backDatos/AboutMe', $data);
     }
 
     /**

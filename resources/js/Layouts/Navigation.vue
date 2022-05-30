@@ -12,7 +12,7 @@
     <div class="mobile-display">
       <button class="text-gray-900 hover:text-green-400" onclick="menuCollapse()"><i class="las la-bars"></i></button>
     </div>
-    <div class="flex mobile-collapse">
+    <div class="flex mobile-collapse">      
       <jet-input type="search" class="h-full px-3 rounded-l-lg" placeholder="Buscar..."/>      
       <div>
         <button class="inline-block bg-gray-800 hover:bg-gray-600	text-blue-100 hover:text-blue-200 px-4 py-3.5 flex items-center font-bold rounded-r-lg">

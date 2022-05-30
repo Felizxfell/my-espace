@@ -13,7 +13,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <jet-application-mark class="block h-9 w-auto" />
+                                    <jet-application-mark class="block h-10 w-full rounded-full" />
                                 </Link>
                             </div>
 
