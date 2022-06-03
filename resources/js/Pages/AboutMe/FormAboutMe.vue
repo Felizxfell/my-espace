@@ -24,15 +24,15 @@
 </template>
 
 <script>
-import { reactive, toRefs } from "vue";
+import { reactive } from "vue";
 import { Inertia } from '@inertiajs/inertia'
 
 export default {
     name: 'FormAboutMe',
     emits: ['backemit'],
-    setup(props, { emit  }){
+    setup(props, { emit }){
         const form = reactive({
-            txtdata: "" 
+            txtdata: ""
         })        
 
         const GuardarAboutMe = async () => {
@@ -44,7 +44,6 @@ export default {
         }
 
         return {
-            // ...toRefs(form),
             form,
 
             GuardarAboutMe,
