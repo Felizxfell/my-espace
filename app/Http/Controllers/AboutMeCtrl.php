@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class AboutMeDatos extends Controller
+class AboutMeCtrl extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class AboutMeDatos extends Controller
     public function index()
     {
         $data['title'] = 'sobre mi';
-        return Inertia::render('backDatos/AboutMe', $data);
+        return Inertia::render('AboutMe/AboutMeBack', $data);
     }
 
     /**

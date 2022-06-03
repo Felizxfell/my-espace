@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AboutMeDatos;
+use App\Http\Controllers\AboutMeCtrl;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,12 +26,12 @@ Route::get('welcome', function () {
 });
 
 Route::get('/', function () {    
-    return Inertia::render('front/AboutMe');
+    return Inertia::render('AboutMe/AboutMeFront');
 })->name('about-me');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('aboutmedata', AboutMeDatos::class)
+Route::resource('aboutmedata', AboutMeCtrl::class)
     ->middleware('auth:sanctum');

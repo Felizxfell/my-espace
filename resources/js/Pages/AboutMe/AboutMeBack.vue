@@ -33,7 +33,7 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Utils } from "@/utils/utils.js";
-import FormAboutMe from "@/Components/FormAboutMe";
+import FormAboutMe from "@/Pages/AboutMe/FormAboutMe";
 import { ref } from "vue";
 
 export default {
