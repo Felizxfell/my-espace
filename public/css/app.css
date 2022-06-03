@@ -1105,6 +1105,9 @@ select {
 .col-start-2 {
 	grid-column-start: 2;
 }
+.float-right {
+	float: right;
+}
 .m-auto {
 	margin: auto;
 }

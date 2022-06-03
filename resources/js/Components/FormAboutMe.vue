@@ -22,13 +22,14 @@
 <script>
 export default {
     name: 'FormAboutMe',
-    setup(){
+    emits: ['backemit'],
+    setup(props, { emit  }){
         const GuardarAboutMe = async () => {
             alert('Datos guardados')
         }
 
         const Back = () => {
-
+            emit('backemit', false)
         }
 
         return {

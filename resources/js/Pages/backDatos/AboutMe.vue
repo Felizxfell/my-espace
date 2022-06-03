@@ -8,7 +8,8 @@
 
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg" v-if="!showViewAM">
+        <div
+          class="bg-white overflow-hidden shadow-xl sm:rounded-lg" v-if="!showViewAM">
           <div class="flex">
             <div class="flex-none"></div>
             <div class="grow py-8 px-3 border-l-blue-600 border-blue-c">
@@ -18,12 +19,12 @@
               adipisci quibusdam odio. Ut veritatis porro libero autem explicabo
               error minus provident!
             </div>
-            <div class="flex-none w-14 py-8 px-3">              
-              <i @click="redirectFormAboutMe" class="las la-user-astronaut astronaut-size"></i>
+            <div class="flex-none w-14 py-8 px-3">
+              <i class="las la-user-edit icon-size mt-5" @click="redirectFormAboutMe"></i>
             </div>
           </div>
         </div>
-        <FormAboutMe v-if="showViewAM"/>
+        <FormAboutMe v-if="showViewAM" @backemit="backViewMain($event)" />
       </div>
     </div>
   </app-layout>
@@ -32,30 +33,34 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Utils } from "@/utils/utils.js";
-import FormAboutMe from '@/Components/FormAboutMe'
+import FormAboutMe from "@/Components/FormAboutMe";
 import { ref } from "vue";
 
 export default {
   components: {
     AppLayout,
-    FormAboutMe
+    FormAboutMe,
   },
   props: {
     title: String,
   },
   setup() {
     const Util = new Utils();
-    const showViewAM = ref(false)
+    const showViewAM = ref(false);
 
     const redirectFormAboutMe = () => {
-      showViewAM.value = true
-    }
+      showViewAM.value = true;
+    };
 
+    const backViewMain = (back) => {
+      showViewAM.value = back;
+    };
     return {
       Util,
       showViewAM,
 
       redirectFormAboutMe,
+      backViewMain,
     };
   },
 };
@@ -65,7 +70,7 @@ export default {
 .border-blue-c {
   border-left: 8px solid rgba(37, 99, 235, var(--tw-border-opacity));
 }
-.astronaut-size {
+.icon-size {
   font-size: 35px;
   cursor: pointer;
 }
