@@ -20,7 +20,7 @@
               error minus provident!
             </div>
             <div class="flex-none w-14 py-8 px-3">
-              <i class="las la-user-edit icon-size mt-5" @click="redirectFormAboutMe"></i>
+              <i class="las la-user-edit icon-size mt-5" title="Editar" @click="redirectFormAboutMe"></i>
             </div>
           </div>
         </div>
@@ -32,8 +32,8 @@
 
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import { Utils } from "@/utils/utils.js";
 import FormAboutMe from "@/Pages/AboutMe/FormAboutMe";
+import { Utils } from "@/utils/utils.js";
 import { ref } from "vue";
 
 export default {

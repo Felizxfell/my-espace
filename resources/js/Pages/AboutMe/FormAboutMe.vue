@@ -4,8 +4,12 @@
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="txtaboutme">
                     Mi informacion principal
-                </label>            
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="txtaboutme"  placeholder="Info here..." autocomplete="off"></textarea>
+                </label>                        
+                <textarea 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="txtaboutme"  placeholder="Info here..." autocomplete="off"
+                    v-model="form.txtdata"
+                ></textarea>
             </div>
             <div class="flex items-center justify-center">
                 <button class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full">
@@ -20,12 +24,19 @@
 </template>
 
 <script>
+import { reactive, toRefs } from "vue";
+import { Inertia } from '@inertiajs/inertia'
+
 export default {
     name: 'FormAboutMe',
     emits: ['backemit'],
     setup(props, { emit  }){
+        const form = reactive({
+            txtdata: "" 
+        })        
+
         const GuardarAboutMe = async () => {
-            alert('Datos guardados')
+            Inertia.post('/aboutmedata', form)
         }
 
         const Back = () => {
@@ -33,6 +44,9 @@ export default {
         }
 
         return {
+            // ...toRefs(form),
+            form,
+
             GuardarAboutMe,
             Back,
         }

@@ -20004,8 +20004,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _utils_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/utils/utils.js */ "./resources/js/utils/utils.js");
-/* harmony import */ var _Pages_AboutMe_FormAboutMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Pages/AboutMe/FormAboutMe */ "./resources/js/Pages/AboutMe/FormAboutMe.vue");
+/* harmony import */ var _Pages_AboutMe_FormAboutMe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/AboutMe/FormAboutMe */ "./resources/js/Pages/AboutMe/FormAboutMe.vue");
+/* harmony import */ var _utils_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/utils/utils.js */ "./resources/js/utils/utils.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
@@ -20014,13 +20014,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    FormAboutMe: _Pages_AboutMe_FormAboutMe__WEBPACK_IMPORTED_MODULE_2__.default
+    FormAboutMe: _Pages_AboutMe_FormAboutMe__WEBPACK_IMPORTED_MODULE_1__.default
   },
   props: {
     title: String
   },
   setup: function setup() {
-    var Util = new _utils_utils_js__WEBPACK_IMPORTED_MODULE_1__.Utils();
+    var Util = new _utils_utils_js__WEBPACK_IMPORTED_MODULE_2__.Utils();
     var showViewAM = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
 
     var redirectFormAboutMe = function redirectFormAboutMe() {
@@ -20084,17 +20084,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'FormAboutMe',
   emits: ['backemit'],
   setup: function setup(props, _ref) {
     var emit = _ref.emit;
+    var form = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+      txtdata: ""
+    });
 
     var GuardarAboutMe = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -20102,7 +20109,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                alert('Datos guardados');
+                _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/aboutmedata', form);
 
               case 1:
               case "end":
@@ -20122,6 +20129,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
 
     return {
+      // ...toRefs(form),
+      form: form,
       GuardarAboutMe: GuardarAboutMe,
       Back: Back
     };
@@ -23547,6 +23556,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [!$setup.showViewAM ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
         "class": "las la-user-edit icon-size mt-5",
+        title: "Editar",
         onClick: _cache[0] || (_cache[0] = function () {
           return $setup.redirectFormAboutMe && $setup.redirectFormAboutMe.apply($setup, arguments);
         })
@@ -23632,30 +23642,56 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "grid grid-cols-6 gap-4"
 };
+var _hoisted_2 = {
+  "class": "mb-4"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mb-4\"><label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"txtaboutme\"> Mi informacion principal </label><textarea class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"txtaboutme\" placeholder=\"Info here...\" autocomplete=\"off\"></textarea></div><div class=\"flex items-center justify-center\"><button class=\"bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full\"> Guardar </button></div>", 2);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "block text-gray-700 text-sm font-bold mb-2",
+  "for": "txtaboutme"
+}, " Mi informacion principal ", -1
+/* HOISTED */
+);
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "flex items-center justify-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full"
+}, " Guardar ")], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "las la-arrow-left"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Back ");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Back ");
 
-var _hoisted_6 = [_hoisted_4, _hoisted_5];
+var _hoisted_7 = [_hoisted_5, _hoisted_6];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 col-start-2 col-span-4",
-    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $setup.GuardarAboutMe && $setup.GuardarAboutMe.apply($setup, arguments);
     }, ["prevent"]))
-  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    "class": "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+    id: "txtaboutme",
+    placeholder: "Info here...",
+    autocomplete: "off",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $setup.form.txtdata = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.txtdata]])]), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "text-left text-gray-500 text-xs hover:underline backmenu",
-    onClick: _cache[0] || (_cache[0] = function () {
+    onClick: _cache[1] || (_cache[1] = function () {
       return $setup.Back && $setup.Back.apply($setup, arguments);
     })
-  }, _hoisted_6)], 32
+  }, _hoisted_7)], 32
   /* HYDRATE_EVENTS */
   )]);
 }
