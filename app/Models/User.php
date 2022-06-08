@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'about_me',        
     ];
 
     /**
@@ -58,4 +59,30 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function proyectos()
+    {
+        return $this->hasMany(Proyectos::class);
+    }
+
+    public function articulos()
+    {
+        return $this->hasMany(Articulos::class);
+    }
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comentarios::class);
+    }
+
+    public function preguntas()
+    {
+        return $this->hasMany(Preguntas::class);
+    }
+
+    public function respuestas()
+    {
+        return $this->hasMany(Respuestas::class);
+    }
 }
